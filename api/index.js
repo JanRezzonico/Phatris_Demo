@@ -9,6 +9,8 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 const uri = process.env.MONGODB_URI;
 
+app.use(express.json())
+
 async function connect() {
     try {
         await mongoose.connect(uri);
@@ -21,7 +23,6 @@ async function connect() {
 connect();
 
 router.post('/', async (req, res) => {
-    console.log(req.body)
     try {
         const query = Scoreboard.findOne({ username: req.body.username, mode: req.body.mode })
             .select('username points mode');
