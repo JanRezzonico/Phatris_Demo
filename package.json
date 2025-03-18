@@ -1,0 +1,16 @@
+{
+  "name": "phatris",
+  "version": "1.0.0",
+  "description": "",
+  "license": "UNLICENSED",
+  "author": "Jan Rezzonico and Luca Lorenzon",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node api/index.js",
+    "build": "echo \"No build step\""
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
