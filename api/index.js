@@ -9,13 +9,13 @@ router.get('/', (req, res) => {
 
 router.get('/:mode', (req, res) => {
     res.send(`Hello ${req.params.mode}!`);
-}
-);
+});
 
 app.use('/api/scoreboard', router);
+
 app.use(express.static('public'));
 
+// Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-}
-);
+});
