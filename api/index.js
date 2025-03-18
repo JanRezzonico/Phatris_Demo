@@ -21,6 +21,7 @@ async function connect() {
 connect();
 
 router.post('/', async (req, res) => {
+    console.log(req.body)
     try {
         const query = Scoreboard.findOne({ username: req.body.username, mode: req.body.mode })
             .select('username points mode');
@@ -37,7 +38,7 @@ router.post('/', async (req, res) => {
         res.status(200).send('Success');
     } catch (err) {
         console.error(err);
-        res.status(500).send(err);
+        res.status(500).send("Internal Server Error");
     }
 });
 
@@ -57,7 +58,7 @@ router.get('/:mode', async (req, res) => {
         res.send(JSON.stringify(values));
     } catch (err) {
         console.error(err);
-        res.status(500).send(err);
+        res.status(500).send("Internal Server Error");
     }
 });
 

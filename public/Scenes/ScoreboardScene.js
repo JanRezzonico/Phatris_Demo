@@ -37,7 +37,7 @@ class ScoreboardScene extends Phaser.Scene{
             .setOrigin(0.5)
             .setScale(0.7);
 
-        this.waitingText = this.add.bitmapText(screenCenterX, 400, 'atari', "Temporarily unavailable")
+        this.waitingText = this.add.bitmapText(screenCenterX, 400, 'atari', "Fetching data")
             .setOrigin(0.5)
             .setScale(0.5);
 

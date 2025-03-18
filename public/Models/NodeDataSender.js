@@ -6,8 +6,13 @@ class NodeDataSender {
     static sendData(data) {
         const xhttp = new XMLHttpRequest();
         xhttp.open("POST", '/api/scoreboard', true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("username=" + data.username + "&points=" + data.points + "&mode=" + data.mode);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        const requestBody = {
+            username: data.username,
+            points: data.points,
+            mode: data.mode
+        };
+        xhttp.send(JSON.stringify(requestBody));
     }
     /**
      * Asks to the server the scoreboard data and returns it.
